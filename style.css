@@ -1,0 +1,271 @@
+/* === ESTILO GENERAL === */
+
+body {
+  margin: 0;
+  background-color: #111;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+/* === CONTENEDOR PRINCIPAL === */
+.categoria-container {
+  text-align: center;
+  width: 90%;
+  max-width: 1800px;
+}
+
+
+/*.categoria-titulo {
+  font-size: 3.5em;
+  margin-bottom: 30px;
+  color: #FFFAFA; 
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  animation: resplandor 2.5s infinite alternate;
+  letter-spacing: 2px;
+}*/
+
+
+.categoria-titulo {
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
+  background: red;
+  padding: 1em 2em;
+  text-align: center;
+  width: max-content;
+  margin: 50px auto;
+  position: relative;
+  z-index: 1;
+  line-height: 1.2;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+/* .categoria-titulo {
+  font-size: 5em;
+  letter-spacing: 5px;
+  color: #FFFFFF;
+  text-shadow: 0 0 20px #FFD700, 0 0 40px #FF4500;
+  font-family: 'Georgia', serif;
+  margin-bottom: 40px;
+  text-align: center;
+} */
+
+
+.categoria-titulo::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -30px;
+  right: -30px;
+  bottom: -20px;
+  background: red;
+  z-index: -1;
+  box-shadow: 0 0 10px white, 0 0 20px red;
+  animation: resplandor 2s infinite alternate;
+
+  clip-path: polygon(
+    /* Picos superiores */
+    10% 0%, 12% 5%, 14% 0%, 16% 5%, 18% 0%, 20% 5%, 22% 0%, 24% 5%,
+    26% 0%, 28% 5%, 30% 0%, 32% 5%, 34% 0%, 36% 5%, 38% 0%, 40% 5%,
+    42% 0%, 44% 5%, 46% 0%, 48% 5%, 50% 0%, 52% 5%, 54% 0%, 56% 5%,
+    58% 0%, 60% 5%, 62% 0%, 64% 5%, 66% 0%, 68% 5%, 70% 0%, 72% 5%,
+    74% 0%, 76% 5%, 78% 0%, 80% 5%, 82% 0%, 84% 5%, 86% 0%, 88% 5%,
+    90% 0%, 92% 5%, 94% 0%, 96% 5%, 98% 0%, 100% 10%,
+
+    /* Lado derecho */
+    100% 12%, 95% 14%, 100% 16%, 95% 18%, 100% 20%, 95% 22%,
+    100% 24%, 95% 26%, 100% 28%, 95% 30%, 100% 32%, 95% 34%,
+    100% 36%, 95% 38%, 100% 40%, 95% 42%, 100% 44%, 95% 46%,
+    100% 48%, 95% 50%, 100% 52%, 95% 54%, 100% 56%, 95% 58%,
+    100% 60%, 95% 62%, 100% 64%, 95% 66%, 100% 68%, 95% 70%,
+    100% 72%, 95% 74%, 100% 76%, 95% 78%, 100% 80%, 95% 82%,
+    100% 84%, 95% 86%, 100% 88%, 95% 90%, 100% 92%, 95% 94%,
+    100% 96%, 95% 98%, 100% 100%,
+
+    /* Picos inferiores */
+    98% 100%, 96% 95%, 94% 100%, 92% 95%, 90% 100%, 88% 95%, 86% 100%, 84% 95%,
+    82% 100%, 80% 95%, 78% 100%, 76% 95%, 74% 100%, 72% 95%, 70% 100%, 68% 95%,
+    66% 100%, 64% 95%, 62% 100%, 60% 95%, 58% 100%, 56% 95%, 54% 100%, 52% 95%,
+    50% 100%, 48% 95%, 46% 100%, 44% 95%, 42% 100%, 40% 95%, 38% 100%, 36% 95%,
+    34% 100%, 32% 95%, 30% 100%, 28% 95%, 26% 100%, 24% 95%, 22% 100%, 20% 95%,
+    18% 100%, 16% 95%, 14% 100%, 12% 95%, 10% 100%, 0% 90%,
+
+    /* Lado izquierdo */
+    0% 88%, 5% 86%, 0% 84%, 5% 82%, 0% 80%, 5% 78%, 0% 76%, 5% 74%,
+    0% 72%, 5% 70%, 0% 68%, 5% 66%, 0% 64%, 5% 62%, 0% 60%, 5% 58%,
+    0% 56%, 5% 54%, 0% 52%, 5% 50%, 0% 48%, 5% 46%, 0% 44%, 5% 42%,
+    0% 40%, 5% 38%, 0% 36%, 5% 34%, 0% 32%, 5% 30%, 0% 28%, 5% 26%,
+    0% 24%, 5% 22%, 0% 20%, 5% 18%, 0% 16%, 5% 14%, 0% 12%, 5% 10%,
+    0% 0%
+  );
+}
+
+@keyframes resplandor {
+  0% {
+    box-shadow: 0 0 10px white, 0 0 20px red;
+  }
+  100% {
+    box-shadow: 0 0 20px white, 0 0 30px red;
+  }
+}
+
+
+
+@keyframes resplandor {
+  from { text-shadow: 0 0 10px rgba(255,215,0,0.5); }
+  to { text-shadow: 0 0 25px rgba(255,215,0,1); }
+}
+
+
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  width: 100%;
+  height: 75vh;
+}
+
+
+/* Funcion para ordenar por 3 productos */
+/* .productos-grid .producto-card:nth-child(3) {
+  grid-column: 1 / 3; 
+  justify-self: center; 
+} */
+
+
+
+.producto-card {
+  background-color: black; 
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px;
+  transition: transform 0.5s ease;
+}
+
+
+
+.producto-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+
+.producto-nombre {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* === PRECIO === */
+/* .producto-precio {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #54A637;
+  text-shadow: 0 0 8px 54A637rgba(0,255,127,0.8);
+} */
+
+.producto-precio {
+  position: relative;
+  display: inline-block;
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #1aa162;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  padding: 25px 50px;
+  z-index: 1;
+}
+
+
+.producto-precio::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 130px;
+  background: radial-gradient(circle, #FFD700 60%, #FF8C00 100%);
+  
+
+  clip-path: polygon(
+    50% 0%, 60% 10%, 80% 5%, 90% 20%, 100% 40%, 
+    95% 60%, 100% 80%, 90% 95%, 75% 90%, 60% 100%, 
+    40% 100%, 25% 90%, 10% 95%, 0% 75%, 5% 50%, 
+    0% 25%, 10% 10%, 30% 5%, 40% 10%
+  );
+  
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  animation: pulsoOvalo 1.8s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+
+@keyframes pulsoOvalo {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+    filter: brightness(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.1);
+    filter: brightness(1.2);
+  }
+}
+
+
+
+@media (max-width: 1000px) {
+  .productos-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    height: auto;
+  }
+
+  .producto-img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .producto-precio, .producto-nombre {
+    font-size: 2em;
+  }
+
+
+.producto-grande {
+  max-width: 800px;
+  padding: 40px;
+  font-size: 1.6em;
+  transform: scale(1.05);
+
+  
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.productos-grid:has(.producto-grande) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+}
